@@ -1,33 +1,25 @@
 import styled from "styled-components"
 
-const Father = styled.div`
+const Wrapper = styled.div`
   display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props)=>props.theme.backgroundColor};
 `;
 
-const BoxOne = styled.div`
-  background-color: teal;
-  width: 100px;
-  height: 100px;
-`;
+const Text = styled.h1`
+  font-size: 40px;
+  color: ${(props)=> props.theme.textColor};
+`
 
-const Text = styled.span`
-  color: white;
-`;
-
-const BoxTwo = styled.div`
-  background-color: tomato;
-  width: 100px;
-  height: 100px;
-`;
 
 function App() {
   return(
-   <Father>
-    <BoxOne>
-      <Text>Hello</Text>
-    </BoxOne>
-    <BoxTwo/>
-   </Father> 
+    <Wrapper>
+     <Text>Hello</Text>
+    </Wrapper>
   )
 }
 export default App
