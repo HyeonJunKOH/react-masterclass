@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import Router  from "./Router"
-import {Helmet} from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async"
 
 
 const GlobalStyle = createGlobalStyle`
@@ -51,9 +51,11 @@ table {
   box-sizing:border-box;
 }
 body{
+  font-weight: 300;
   font-family: "Source Sans 3", sans-serif;
   background-color: ${(props) => props.theme.bgColor};
   color:${(props)=>props.theme.textColor};
+  line-height: 1.2;
 }
 a{
   text-decoration: none;
@@ -64,9 +66,11 @@ a{
 function App() {
   return(
     <>
+    <HelmetProvider>
       <Helmet>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" />
       </Helmet>
+    </HelmetProvider>
       <GlobalStyle/>
       <Router/>
     </>
