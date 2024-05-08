@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 import Router  from "./Router"
 import { Helmet, HelmetProvider } from "react-helmet-async"
+import {ReactQueryDevtools} from "react-query/devtools";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -28,6 +29,9 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
+}
+*[hidden]{
+  display: none;
 }
 body {
 	line-height: 1;
@@ -73,6 +77,7 @@ function App() {
     </HelmetProvider>
       <GlobalStyle/>
       <Router/>
+      <ReactQueryDevtools initialIsOpen={true}/>
     </>
   )
 }
