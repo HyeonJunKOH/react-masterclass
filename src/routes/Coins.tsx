@@ -2,6 +2,8 @@ import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { fechCoins } from "../api";
+import { HelmetProvider, Helmet } from "react-helmet-async";
+
 
 const Container = styled.div`
     padding: 0px 20px;
@@ -67,6 +69,11 @@ function Coins() {
     const { isLoading, data } = useQuery<ICoin[]>("allCoins", fechCoins)
     return (
         <Container>
+            <HelmetProvider>
+                <Helmet>
+                    <title>코인</title>
+                </Helmet>
+            </HelmetProvider>
             <Header>
                 <Title>코인</Title>
             </Header>
