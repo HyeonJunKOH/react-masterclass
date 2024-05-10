@@ -49,11 +49,11 @@ const Loader = styled.div`
     text-align: center;
     display: block;
 `
-const Img = styled.img`
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
-`
+// const Img = styled.img`
+//     width: 25px;
+//     height: 25px;
+//     margin-right: 10px;
+// `
 
 interface ICoin {
     id: string,
@@ -81,7 +81,7 @@ function Coins() {
                 <Loader>"Loading..."</Loader>
             ) : (
                 <CoinsList>
-                    {data?.slice(0,100).map((coin) => 
+                    {data?.slice(0,50).map((coin) => 
                         <Coin key={coin.id}>
                             <Link 
                                 to={{
@@ -89,7 +89,7 @@ function Coins() {
                                     state: {name: coin.name},
                                 }}
                             >
-                                <Img src={`https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/${coin.name.toLowerCase().split(" ").join("-")}.png`}/>
+                                {/* <Img src={`https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/${coin.name.toLowerCase().split(" ").join("-")}.png`}/> */}
                                 {coin.name} &rarr;
                             </Link>
                         </Coin>)}
